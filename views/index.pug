@@ -1,0 +1,58 @@
+extend layout 
+block content 
+    .container-fluid.mt-4
+     .row
+      .col-md-2
+       .row
+        .col
+         p.m-0.p-2.border.rounded-top
+          i.fa.fa-home.text-primary(aria-hidden='true')
+          | First Item
+         p.m-0.p-2.border
+          i.fa.fa-home.text-primary(aria-hidden='true')
+          | Second Item
+         p.m-0.p-2.border.rounded-bottom
+          i.fa.fa-home.text-primary(aria-hidden='true')
+          | Third Item
+      .col-md
+       .content
+        .relContent
+            each i in Array.from({length:12})
+             .card
+              img.card-img-top(src='/images/rel.jpg' alt='300 x 230')
+              .card-body
+               h5.card-title
+                i.text-primary.fa.fa-map-marker(aria-hidden='true')
+                |                         Suburd
+               p.card-text
+                i.text-primary.fa.fa-road(aria-hidden='true')
+                |                         Address
+               a.btn.btn-primary(href='#' data-bs-toggle='modal' data-bs-target='#exampleModal') More...
+        nav.mt-4(aria-label='Page nav')
+         ul.pagination
+          li.page-item
+           a.page-link(href='#') Previous
+          li.page-item
+           a.page-link(href='#') 1
+          li.page-item
+           a.page-link(href='#') 2
+          li.page-item
+           a.page-link(href='#') 3
+          li.page-item
+           a.page-link(href='#') Next
+
+    #exampleModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+     .modal-dialog
+      .modal-content
+       img(src='/images/modal.jpg' alt='400 x 300')
+       .modal-body
+        h5.card-title
+         i.text-primary.fa.fa-map-marker(aria-hidden='true')
+         |                     Suburd
+        h6.mt-2
+         i.text-primary.fa.fa-road(aria-hidden='true')
+         | Address
+        div
+         | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum quas esse aut placeat accusamus cupiditate maxime at optio error aperiam aliquid minus, atque numquam adipisci sed porro, eius architecto dolor!
+       .modal-footer
+        button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
